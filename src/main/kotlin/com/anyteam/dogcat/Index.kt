@@ -1,6 +1,7 @@
 package com.anyteam.dogcat
 
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
 
@@ -9,8 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody
 class Index
 {
     @RequestMapping("/")
-    fun index(): String
+    fun index(model: Model) : String
     {
+        model.addAttribute("text", "Hello World")
         return "index"
     }
 
